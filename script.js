@@ -25,7 +25,9 @@ function fetchData(url) {
     var ouput_block = document.getElementById("ouput-block");
     ouput_block.removeAttribute("hidden");
     ouput_display.innerHTML = output;
-    download(output, 'output.md', 'text/plain')
+    var segments  = url.split("/"); 
+	var file_name = segments.pop() || segments.pop() + ".md";
+    download(output, file_name, 'text/plain')
   }
 }
 
